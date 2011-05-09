@@ -91,6 +91,7 @@
  '(icomplete-mode t)
  '(column-number-mode t)
  '(menu-bar-mode nil)
+ '(tool-bar-mode nil)
  '(diff-switches "-u")
  '(require-final-newline 'query)
 )
