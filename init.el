@@ -19,11 +19,6 @@
 (setq yas/root-directory "~/.emacs.d/snippets")
 (yas/load-directory yas/root-directory)
 
-(require 'multi-term)
-(setq multi-term-program "/bin/bash")
-(multi-term)
-(defalias 'term 'multi-term)
-
 (defun build-tags (tag-path) 
   (interactive "DTag Library Path: ")
   (call-process-shell-command 
@@ -78,20 +73,31 @@
      ))
 
 (custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(diff-switches "-u")
  '(flymake-gui-warnings-enabled nil)
  '(flymake-start-syntax-check-on-newline t)
  '(gud-tooltip-echo-area t)
+ '(icomplete-mode t)
+ '(ido-mode t nil (ido))
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
  '(python-check-command "epylint --stdlib")
  '(python-python-command "ipython")
+ '(require-final-newline (quote query))
  '(tags-case-fold-search nil)
- '(tooltip-use-echo-area t)
- '(inhibit-splash-screen t)
- '(transient-mark-mode t)
- '(ido-mode t)
- '(icomplete-mode t)
- '(column-number-mode t)
- '(menu-bar-mode nil)
  '(tool-bar-mode nil)
- '(diff-switches "-u")
- '(require-final-newline 'query)
-)
+ '(tooltip-use-echo-area t)
+ '(transient-mark-mode t)
+ '(term-default-fg-color "#586e75")
+ '(term-default-bg-color "#002b36"))
+
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+(multi-term)
+(defalias 'term 'multi-term)
+
