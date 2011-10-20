@@ -4,6 +4,8 @@
       (concat  "%b - emacs@" (system-name)))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/custom_packages"))
+
 (require 'package)
 (dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
                   ("elpa" . "http://tromey.com/elpa/")
@@ -64,13 +66,7 @@
 
 (require 'django-macros)
 (require 'pomodoro)
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (require 'color-theme-solarized)
-     (color-theme-solarized-dark)
-     ))
+(require 'color-theme-github)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -93,11 +89,11 @@
  '(tool-bar-mode nil)
  '(tooltip-use-echo-area t)
  '(transient-mark-mode t)
- '(term-default-fg-color "#586e75")
- '(term-default-bg-color "#002b36"))
-
+)
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 (multi-term)
 (defalias 'term 'multi-term)
+
+
 
