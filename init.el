@@ -29,8 +29,19 @@
    (get-buffer-create "Etags Compile") 
    1)
 )
-(defalias 'etb 'build-tags)
 
+(defun install-packages-from-file (filename)
+  "Install all the packages from the archives listed in the file name separated by new lines"
+  (interactive "fFile Path: ")
+  (mapc 'package-install 
+	(mapcar 'intern 
+		((lambda () 
+		    (find-file filename)
+		    (split-string (buffer-string))))))
+  (kill-buffer filename)
+)
+
+(defalias 'etb 'build-tags)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (when (load "flymake" t)
@@ -94,6 +105,3 @@
 (setq multi-term-program "/bin/bash")
 (multi-term)
 (defalias 'term 'multi-term)
-
-
-
