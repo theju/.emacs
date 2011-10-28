@@ -1,0 +1,15 @@
+color-theme
+color-theme-github
+color-theme-solarized
+furl
+ipython
+js2-mode
+magit
+multi-term
+org
+python-pylint
+regex-tool
+virtualenv
+yasnippet
+yasnippet-bundle
+css-mode
