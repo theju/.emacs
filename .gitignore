@@ -3,3 +3,4 @@ elpa/
 *.elc
 snippets/
 url/
+tramp
