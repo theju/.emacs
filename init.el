@@ -75,9 +75,11 @@
   (global-set-key (kbd "<f9>") 'flymake-display-prev-error)
   (add-hook 'python-mode-hook 'flymake-mode))
 
+;; My custom emacs packages available under custom_packages
 (require 'django-macros)
 (require 'pomodoro)
 (require 'color-theme-github)
+(require 'android)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
