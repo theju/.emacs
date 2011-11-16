@@ -1,6 +1,8 @@
+android-mode
 color-theme
 color-theme-github
 color-theme-solarized
+css-mode
 furl
 ipython
 js2-mode
@@ -12,4 +14,3 @@ regex-tool
 virtualenv
 yasnippet
 yasnippet-bundle
-css-mode
