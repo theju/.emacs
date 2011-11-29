@@ -1,7 +1,5 @@
 (require 'android-mode)
 
-(setq compilation-environment '("PATH=/home/theju/reqs/apache-ant-1.8.2/bin:/home/theju/reqs/android-sdk-linux/platform-tools:/home/theju/reqs/android-sdk-linux/tools:/home/theju/reqs/jdk1.7.0_01/bin:/home/theju/reqs/apache-ant-1.8.2/bin:/home/theju/reqs/android-sdk-linux/platform-tools:/home/theju/reqs/android-sdk-linux/tools:/home/theju/reqs/jdk1.7.0_01/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"))
-
 (setq android-mode-sdk-dir "/home/theju/reqs/android-sdk-linux")
 (setq android-mode-avd "Froyo")
 
