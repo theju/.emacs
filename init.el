@@ -13,6 +13,17 @@
   (add-to-list 'package-archives source t))
 (package-initialize)
 
+(defun install-packages-from-file (filename)
+  "Install all the packages from the archives listed in the file name separated by new lines"
+  (interactive "fFile Path: ")
+  (mapc 'package-install 
+	(mapcar 'intern 
+		((lambda () 
+		    (find-file filename)
+		    (split-string (buffer-string))))))
+  (kill-buffer filename)
+)
+
 (setq tags-file-name "~/TAGS")
 (global-set-key (kbd "<f5>") 'find-tag)
 (global-set-key (kbd "<f6>") 'rgrep)
@@ -28,17 +39,6 @@
    nil 
    (get-buffer-create "Etags Compile") 
    1)
-)
-
-(defun install-packages-from-file (filename)
-  "Install all the packages from the archives listed in the file name separated by new lines"
-  (interactive "fFile Path: ")
-  (mapc 'package-install 
-	(mapcar 'intern 
-		((lambda () 
-		    (find-file filename)
-		    (split-string (buffer-string))))))
-  (kill-buffer filename)
 )
 
 (defalias 'etb 'build-tags)
