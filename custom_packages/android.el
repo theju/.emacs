@@ -1,7 +1,7 @@
 (require 'android-mode)
 
 (setq android-mode-sdk-dir "/home/theju/reqs/android-sdk-linux")
-(setq android-mode-avd "Froyo")
+(setq android-mode-avd "Gingerbread")
 
 (android-defun-ant-task "debug install")
 
