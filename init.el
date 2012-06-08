@@ -80,6 +80,8 @@
 (require 'pomodoro)
 (require 'color-theme-github)
 (require 'android)
+(require 'send_gmail)
+(require 'git_worksummarizer)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
