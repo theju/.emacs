@@ -1,5 +1,9 @@
 (require 'magit)
 
+(defgroup idonethis nil
+  "A small library to send out git logs to idonethis."
+  :group 'applications)
+
 (defcustom idonethis-address ""
   "The idonethis email address to send out the daily log.
 Usually something like xyz@team.idonethis.com"
@@ -19,7 +23,7 @@ Usually something like xyz@team.idonethis.com"
   :type 'string)
 
 (defcustom summary-buffer "*summary*"
-  "The name of the temporary summary buffer generated.
+  "The name of the temporary buffer where the summary generated is stored.
 Shouldn't be required for customization since it is killed at
 the end of the log generation."
   :group 'idonethis
