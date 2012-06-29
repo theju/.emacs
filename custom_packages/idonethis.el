@@ -53,7 +53,7 @@ the end of the log generation."
       (reverse-region (point-min) (point-max))
       (append-to-buffer mail-buffer (point-min) (point-max)))
     (with-current-buffer mail-buffer
-      (smtpmail-send-it))
+      (message-send-mail-function))
     (kill-buffer (get-buffer summary-buffer-name))))
 
 (provide 'idonethis)
