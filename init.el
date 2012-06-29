@@ -80,32 +80,9 @@
 (require 'pomodoro)
 ;;(require 'color-theme-github)
 (require 'android)
-(require 'send_gmail)
 (require 'idonethis)
+(require 'my_customizations)
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(diff-switches "-u")
- '(flymake-gui-warnings-enabled nil)
- '(flymake-start-syntax-check-on-newline t)
- '(gud-tooltip-echo-area t)
- '(icomplete-mode t)
- '(ido-mode t nil (ido))
- '(inhibit-startup-screen t)
- '(js2-bounce-indent-p t)
- '(menu-bar-mode nil)
- '(python-check-command "epylint --stdlib")
- '(python-python-command "ipython")
- '(require-final-newline (quote query))
- '(tags-case-fold-search nil)
- '(tool-bar-mode nil)
- '(tooltip-use-echo-area t)
- '(transient-mark-mode t)
-)
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 (multi-term)

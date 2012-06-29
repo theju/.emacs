@@ -4,3 +4,4 @@ elpa/
 snippets/
 url/
 tramp
+custom_packages/my_customizations.el
