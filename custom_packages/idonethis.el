@@ -17,8 +17,12 @@ Usually something like xyz@team.idonethis.com"
 
 ;; The command below will work on POSIX systems only
 ;; Windows users will have to override it.
-(defcustom since-when (shell-command-to-string "date -d yesterday +%Y-%m-%d")
+(defun date-since-when (symbol value)
+  (set-default symbol (shell-command-to-string "date -d yesterday +%Y-%m-%d")))
+
+(defcustom since-when nil
   "The date since when to send out the log"
+  :set 'date-since-when
   :group 'idonethis
   :type 'string)
 
