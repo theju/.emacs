@@ -28,24 +28,29 @@ Not required if not using git or magit."
 (defun idonethis-send (address subject &optional buffer)
   "A function that opens up a mail buffer addressed to the 'idonethis-adress."
   (interactive)
-  (compose-mail address subject ("Body" . buffer)))
+  (compose-mail address subject)
+  (when buffer
+    (let ((mail-buffer (current-buffer)))
+      (goto-char (point-max))
+      (with-current-buffer buffer
+	(append-to-buffer mail-buffer (point-min) (point-max))))))
 
 (defun idonethis-send-git-log ()
   "Helper function to send out git logs of a repository."
   (interactive)
   (require 'magit)
+  (magit-log nil (concat "--since=" since-when))
   (with-temp-buffer
     (let ((temp-buffer (current-buffer)))
-      (magit-log nil (concat "--since=" since-when))
       (with-current-buffer "*magit-log*"
 	(let ((start (lambda ()
-		       (save-excursion
-			 (goto-char (point-min))
-			 (next-line)
-			 (point))))
+		   (save-excursion
+		     (goto-char (point-min))
+		     (next-line)
+		     (point))))
 	      (end (point-max)))
-	  (append-to-buffer temp-buffer (funcall start) end))))
-    (reverse-region (point-min) (point-max))
-    (idonethis-send idonethis-address idonethis-subject (current-buffer))))
+	  (append-to-buffer temp-buffer (funcall start) end)))
+      (reverse-region (point-min) (point-max))
+      (idonethis-send idonethis-address idonethis-subject temp-buffer))))
 
 (provide 'idonethis)
