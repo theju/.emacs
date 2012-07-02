@@ -38,6 +38,18 @@
 ;; use of this software, even if advised of the possibility of such
 ;; damage.
 
+;; Usage:
+;;
+;; At a location in your emacs init files, add the two optional steps
+;; (setq idonethis-address "xyz@team.idonethis.com")
+;; (setq idonethis-subject "Test Subject")
+;;
+;; Then invoke through M-x idonethis-send
+;;
+;; If you are within a git repo and plan to send out the log to idonethis then
+;;
+;; M-x idonethis-send-git-log
+
 (defgroup idonethis nil
   "A small library to send mail to idonethis."
   :group 'applications)
