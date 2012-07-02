@@ -67,7 +67,11 @@ Not required if not using git or magit."
 
 (defun idonethis-send (address subject &optional buffer)
   "A function that opens up a mail buffer addressed to the 'idonethis-adress."
-  (interactive "sIdonethis Address:\nsSubject:")
+  (interactive "sIdonethis Address: \nsSubject: ")
+  (if (= (length address) 0)
+      (setq address idonethis-address))
+  (if (= (length subject) 0)
+      (setq subject idonethis-subject))
   (compose-mail address subject)
   (when buffer
     (let ((mail-buffer (current-buffer)))
