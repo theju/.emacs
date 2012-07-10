@@ -77,13 +77,14 @@ Not required if not using git or magit."
   :group 'idonethis
   :type 'string)
 
-(defun idonethis-send (address subject &optional buffer)
-  "A function that opens up a mail buffer addressed to the 'idonethis-adress."
-  (interactive "sIdonethis Address: \nsSubject: ")
+(defun idonethis-send (&optional address subject buffer)
+  "A function that opens up a mail buffer addressed to the
+'idonethis-address with the 'idonethis-subject."
+  (interactive)
   (if (= (length address) 0)
-      (setq address idonethis-address))
+      (setq address (completing-read "Enter an idonethis address: " (list idonethis-address))))
   (if (= (length subject) 0)
-      (setq subject idonethis-subject))
+      (setq subject (completing-read "Enter a subject: " (list idonethis-subject))))
   (compose-mail address subject)
   (when buffer
     (let ((mail-buffer (current-buffer)))
