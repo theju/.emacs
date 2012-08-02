@@ -11,7 +11,7 @@
     ("l" . android-logcat)
     ("C" . android-ant-clean)
     ("c" . android-ant-compile)
-    ("d" . android-ant-debug\ install)
+    ("d" . android-ant-debug-install)
     ("i" . android-ant-install)
     ("r" . android-ant-reinstall)
     ("u" . android-ant-uninstall)))
