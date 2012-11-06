@@ -50,7 +50,8 @@
   (web-http-post () grooveshark-dotjs-path
 		 :host grooveshark-dotjs-host
 		 :port grooveshark-dotjs-port
-		 :data data))
+		 :data data
+		 :logging nil))
 
 (defun grooveshark-next-song ()
   (interactive)
