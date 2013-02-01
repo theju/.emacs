@@ -7,9 +7,10 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/custom_packages"))
 
 (require 'package)
-(dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("elpa" . "http://tromey.com/elpa/")
-		  ("gnu" . "http://elpa.gnu.org/")))
+(dolist (source '(("gnu" . "http://elpa.gnu.org/packages/")
+		  ("marmalade" . "http://marmalade-repo.org/packages/")
+		  ("melpa" . "http://melpa.milkbox.net/packages/")
+		  ))
   (add-to-list 'package-archives source t))
 (package-initialize)
 
